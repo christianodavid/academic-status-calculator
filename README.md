@@ -21,6 +21,7 @@ Create an application in a programming language of your choice (Java was chosen 
 - Java 23
 - Gradle 8.12.1
 - GoogleSheets API
+- JUnit 5
 - IntelliJ IDEA Ultimate
 
 ## Project Setup
@@ -46,6 +47,12 @@ Create an application in a programming language of your choice (Java was chosen 
 1. Application reads student data from Google Sheets
 2. For each student, calculates average and determines academic status
 3. Updates spreadsheets
+
+## Testing
+- Unit tests cover:
+    - Checking Setters and Getters
+    - Result Calculation
+    - Final Grade For Approval Calculation
 
 ## Project Execution
 - After setting up [Google Sheets API](#google-cloud-setup) and [Environment Setup](#development-environment-setup), open the terminal and use the following commands: <br>
