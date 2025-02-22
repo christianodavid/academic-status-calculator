@@ -1,5 +1,6 @@
 package com.academicstatuscalculator.controller;
 
+import com.academicstatuscalculator.model.Student;
 import com.academicstatuscalculator.service.GoogleSheetsService;
 import com.academicstatuscalculator.view.StudentView;
 import com.google.api.services.sheets.v4.Sheets;
@@ -30,5 +31,46 @@ public class StudentController {
 
         List<Object> headerRow = values.get(2);
         view.printHeader(headerRow);
+
+        for(int i = 3; i < values.size(); i++) {
+            Student student = createStudentFromRow(values.get(i));
+            calcStudentResults(student);
+        }
+    }
+
+    private Student createStudentFromRow(List<Object> row) {
+        return new Student(
+                row.get(0).toString(),
+                row.get(1).toString(),
+                Integer.parseInt(row.get(2).toString()),
+                Double.parseDouble(row.get(3).toString()),
+                Double.parseDouble(row.get(4).toString()),
+                Double.parseDouble(row.get(5).toString())
+        );
+    }
+
+    private void calcStudentResults(Student student) {
+        double average = ((student.getP1() + student.getP2() + student.getP3()) / 3.0) / 10;
+        student.setAverage(average);
+
+        int absences = student.getAbsences();
+        String result = calculateResult(average, absences);
+        student.setResult(result);
+
+        double finalGradeForApproval = result.equals("Exame Final") ? (10 - average) : 0;
+        double roundedFinalGradeApproval = Math.ceil(finalGradeForApproval);
+        student.setFinalGradeForApproval(roundedFinalGradeApproval);
+    }
+
+    private String calculateResult(double average, int absences) {
+        if(absences > TOTAL_CLASSES * 0.25) {
+            return "Reprovado por Falta";
+        } else if(average < 5) {
+            return "Reprovado por Nota";
+        } else if(average < 7) {
+            return "Exame Final";
+        } else {
+            return "Aprovado";
+        }
     }
 }
