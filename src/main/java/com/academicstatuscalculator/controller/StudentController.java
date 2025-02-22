@@ -8,6 +8,8 @@ import com.google.api.services.sheets.v4.model.ValueRange;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static com.academicstatuscalculator.util.Constants.*;
@@ -35,6 +37,8 @@ public class StudentController {
         for(int i = 3; i < values.size(); i++) {
             Student student = createStudentFromRow(values.get(i));
             calcStudentResults(student);
+            updateSpreadsheet(sheets, student, i);
+            view.printStudentData(student);
         }
     }
 
@@ -72,5 +76,26 @@ public class StudentController {
         } else {
             return "Aprovado";
         }
+    }
+
+    private void updateSpreadsheet(Sheets sheets, Student student, int rowIndex) throws IOException {
+        List<Object> rowData = Arrays.asList(
+                student.getId(),
+                student.getName(),
+                student.getAbsences(),
+                student.getP1(),
+                student.getP2(),
+                student.getP3(),
+                student.getResult(),
+                student.getFinalGradeForApproval()
+        );
+
+        ValueRange body = new ValueRange().setValues(Collections.singletonList(rowData));
+
+        sheets.spreadsheets()
+                .values()
+                .update(SPREADSHEET_ID, "engenharia_de_software!A" + (rowIndex + 1) + ":H" + (rowIndex + 1), body)
+                .setValueInputOption("USER_ENTERED")
+                .execute();
     }
 }
