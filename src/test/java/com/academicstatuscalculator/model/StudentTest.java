@@ -17,4 +17,15 @@ public class StudentTest {
         assertEquals("Aprovado", student.getResult());
         assertEquals(0.0, student.getFinalGradeForApproval());
     }
+
+    @Test
+    public void testStudentResultCalc() {
+        Student student = new Student("31", "Gabriela da Silva", 8, 65, 70, 75);
+
+        student.setAverage(7.0);
+        student.setResult("Aprovado");
+
+        assertEquals(7.0, student.getAverage());
+        assertEquals("Aprovado", student.getResult());
+    }
 }
