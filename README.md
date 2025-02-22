@@ -21,6 +21,7 @@ Create an application in a programming language of your choice (Java was chosen 
 - Java 23
 - Gradle 8.12.1
 - GoogleSheets API
+- IntelliJ IDEA Ultimate
 
 ## Project Setup
 
@@ -40,3 +41,16 @@ Create an application in a programming language of your choice (Java was chosen 
 `git clone https://github.com/christianodavid/academic-status-calculator.git` <br>
 2. Paste credentials.json in src/main/resources/
 3. Update SPREADSHEET_ID in Constants.java if necessary
+
+## Operation Flow
+1. Application reads student data from Google Sheets
+2. For each student, calculates average and determines academic status
+3. Updates spreadsheets
+
+## Project Execution
+- After setting up [Google Sheets API](#google-cloud-setup) and [Environment Setup](#development-environment-setup), open the terminal and use the following commands: <br>
+`gradle build` <br>
+`gradle run`
+
+## Contact
+Christiano David - christianodvids@gmail.com
