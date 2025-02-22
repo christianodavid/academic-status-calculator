@@ -16,3 +16,27 @@ Create an application in a programming language of your choice (Java was chosen 
 - The source code texts (attributes, classes, functions, and comments) must be written in English, except for the identifiers and texts predefined in this challenge.
 - The candidate must specify the commands that should be used to run the application.
 - The candidate must publish the source code in a Git repository of their choice.
+
+## Technologies
+- Java 23
+- Gradle 8.12.1
+- GoogleSheets API
+
+## Project Setup
+
+### Requirements
+- [JDK 23](https://www.oracle.com/br/java/technologies/downloads/)
+- [Gradle](https://gradle.org/install/)
+- [Google Account with Google Cloud Access](https://developers.google.com/sheets/api/quickstart/java?hl=pt-br)
+
+### Google Cloud Setup
+1. Create a new Project in Google Cloud
+2. Enable Google Sheets API
+3. Create OAuth credentials
+4. Download the credentials.json
+
+### Development Environment Setup
+1. Clone the repository:<br>
+`git clone https://github.com/christianodavid/academic-status-calculator.git` <br>
+2. Paste credentials.json in src/main/resources/
+3. Update SPREADSHEET_ID in Constants.java if necessary
