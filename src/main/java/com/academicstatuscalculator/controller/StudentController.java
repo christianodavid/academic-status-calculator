@@ -27,5 +27,8 @@ public class StudentController {
             view.printNoDataFound();
             return;
         }
+
+        List<Object> headerRow = values.get(2);
+        view.printHeader(headerRow);
     }
 }
