@@ -58,6 +58,3 @@ Create an application in a programming language of your choice (Java was chosen 
 - After setting up [Google Sheets API](#google-cloud-setup) and [Environment Setup](#development-environment-setup), open the terminal and use the following commands: <br>
 `gradle build` <br>
 `gradle run`
-
-## Contact
-Christiano David - christianodvids@gmail.com
