@@ -22,7 +22,7 @@ Create an application in a programming language of your choice (Java was chosen 
 - Gradle 8.12.1
 - GoogleSheets API
 - JUnit 5
-- IntelliJ IDEA Ultimate
+- [IntelliJ IDEA Ultimate](https://www.jetbrains.com/pt-br/idea/download/)
 
 ## Project Setup
 
@@ -35,7 +35,8 @@ Create an application in a programming language of your choice (Java was chosen 
 ### Google Spreadsheet
 1. Click on the [link](https://docs.google.com/spreadsheets/d/1XvWJcRLj2WAeXO3ULQ_GxGm9---3SZkjMbGcXMJtt70/edit?gid=0#gid=0)
 2. Make a copy of the spreadsheet and save it to your drive
-3. Copy the ID
+3. Copy the ID (on the example below, it's shown where the ID is)
+   - Example: docs.google.com/spreadsheets/d/SPREADSHEET_ID/
 4. Paste the id on src/main/java/com/academicstatuscalculator/util/Constants.java on the SPREADSHEET_ID
 
 ### Google Cloud Setup
