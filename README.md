@@ -30,6 +30,13 @@ Create an application in a programming language of your choice (Java was chosen 
 - [JDK 23](https://www.oracle.com/br/java/technologies/downloads/)
 - [Gradle](https://gradle.org/install/)
 - [Google Account with Google Cloud Access](https://developers.google.com/sheets/api/quickstart/java?hl=pt-br)
+- [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1XvWJcRLj2WAeXO3ULQ_GxGm9---3SZkjMbGcXMJtt70/edit?gid=0#gid=0)
+
+### Google Spreadsheet
+1. Click on the [link](https://docs.google.com/spreadsheets/d/1XvWJcRLj2WAeXO3ULQ_GxGm9---3SZkjMbGcXMJtt70/edit?gid=0#gid=0)
+2. Make a copy of the spreadsheet and save it to your drive
+3. Copy the ID
+4. Paste the id on src/main/java/com/academicstatuscalculator/util/Constants.java on the SPREADSHEET_ID
 
 ### Google Cloud Setup
 1. Create a new Project in Google Cloud
